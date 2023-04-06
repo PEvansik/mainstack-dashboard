@@ -1,0 +1,29 @@
+
+
+
+.line-btn {
+    min-height: 60px;
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-block: 24px;
+}
+
+.days-btn {
+    font-size: 10px;
+    line-height: 16px;
+    cursor: pointer;
+    color: #31373D;
+    padding: 12px 16px;
+    width: 84px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #EFF1F6;
+    border-radius: 100px;
+}
+.custom-date {
+    width: 114px;
+    height: 40px;
+}

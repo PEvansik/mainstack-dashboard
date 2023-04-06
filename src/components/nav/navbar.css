@@ -1,0 +1,159 @@
+
+.navbar {
+    position: absolute;
+    width: 304px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    /* gap: 40px; */
+    background-color: #fff;
+    z-index: 2;
+}
+.side-nav-logo {
+    height: 113px;
+}
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 54px;
+    /* border: 1px solid red; */
+    margin-top: 32px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.nav-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.list-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* padding-top: 60px; */
+    padding-left: 60px;
+    /* border: 1px solid red; */
+    gap: 156px;
+}
+
+
+/* nav-items */
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.nav-item {
+    cursor: pointer;
+}
+
+.nav-item-head {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    /* border: 1px solid red; */
+}
+.nav-items-head-image {
+    width: 20px;
+    height: 20px;
+    /* background: #FF5403; */
+    /* color: #FF5403;   */
+}
+.nav-item-text {
+    font-size: 16px;
+    line-height: 24px;
+    color: #FF5403;
+}
+
+
+/* nav-list-item */
+.nav-list-item{
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    /* border: 1px solid red; */
+}
+.nav-list-item-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav-list-item img {
+    width: 20px;
+    height: 20px;
+}
+.nav-list-item p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #56616B;
+}
+
+.nav-dash,
+.nav-other {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* border: 1px solid red; */
+}
+.navlistitem-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* PROFILE */
+.profile {
+    /* border: 1px solid red; */
+    width: 228px;
+}
+.profile-holder {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile-details {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+.profile-pic {
+    width: 32px;
+    height: 32px;
+}
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+}
+.dots {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (width > 760px) {
+
+}
+
+@media only screen and (width > 1303px) {
+    .navbar  {
+        position: relative;
+        height: 100vh;
+    }
+    .overlay {
+        display: none;
+    }
+    .right-side {
+        padding-inline: 30px;
+    }
+}

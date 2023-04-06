@@ -1,0 +1,42 @@
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 30px;
+    padding-block: 22px;
+    /* border: 1px solid red; */
+}
+
+.dash-head {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: #131316;
+}
+
+.hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.menu {
+    transition: 0.3s ease;
+}
+.close-menu {
+    transition: 0.3s ease;
+}
+
+@media only screen and (width > 760px) {
+    .header {
+        padding-inline: 30px;
+    }
+}
+@media only screen and (width > 1303px) {
+    .logo,
+    .hamburger {
+        display: none;
+    }
+}

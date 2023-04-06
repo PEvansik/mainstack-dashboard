@@ -1,0 +1,70 @@
+
+
+.statholder {
+    padding-top: 46px;
+    padding-inline: 30px;
+}
+.location-source {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.location-media-container {
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #EFF1F6;
+    border-radius: 12px;
+}
+
+
+.location-media-result {
+    display: flex;
+    flex-direction: column;
+}
+.medcon-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.medcon-header h3 {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: #131316;
+}
+
+.medcon-header p a {
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #FF5403;
+}
+
+
+
+
+@media only screen and (width > 559px) {
+    .location-media-result {
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media only screen and (width > 980px) {
+    
+    .location-source {
+        flex-direction: row;
+        gap: 16px;
+        justify-content: space-between;
+    }
+
+    .location-media-container {
+        width: 48%;
+    }
+}
+
+

@@ -1,0 +1,91 @@
+
+
+.views {
+    padding-block: 32px;
+}
+
+.page-views-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 8px;
+    /* border: 1px solid red; */
+}
+.page-views {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: #131316;
+}
+.page-views-img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.all-time {
+    /* border: 1px solid red; */
+    padding-top: 8px;
+}
+.all-time-p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #4D5760;
+}
+
+.views-total {
+    padding-top: 24px;
+    padding-bottom: 32px;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: -0.015em;
+    color: #131316;
+}
+
+
+
+
+.chart-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.linechart {
+    width: 100%;
+    /* border: 1px solid red; */
+    min-height: 350px;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line {
+    width: 100%;
+    height: 100%;
+}
+.loading {
+    text-align: center;
+    width: 100%;
+    /* height: 150px; */
+    font-weight: 600;
+    font-size: 30px;
+}
+
+
+
+@media only screen and (width >360px) {
+
+}
+@media only screen and (width > 560px) {
+
+}
+@media only screen and (width > 700px) {
+
+}
+@media only screen and (width > 860px) {
+
+}

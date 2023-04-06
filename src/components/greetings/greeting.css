@@ -1,0 +1,51 @@
+
+
+.greeting {
+display: flex;
+flex-direction: column;
+letter-spacing: -0.015em;
+/* border: 1px solid red; */
+color: #131316;
+}
+
+.morning {
+    padding-bottom: 10px;
+}
+.morning h3 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.015em;
+    color: #131316;
+    padding-bottom: 10px;
+}
+.morning p {
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #31373D;
+}
+.analytics {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5px 0px;
+    gap: 10px;
+}
+.analytics a {
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #FF5403;
+}
+
+
+@media only screen and (width > 760px) {
+    .greeting {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,41 @@
+
+
+
+.doughnut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px solid red; */
+}
+.doughnut-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 227px;
+    height: 227px;
+    /* border: 1px solid red; */
+}
+.doughnut-holder {
+    width: 160px;
+    height: 160px;
+    /* border: 1px solid red; */
+    /* min-height: 200px; */
+    min-width: 159px;
+    margin-bottom: 2px;
+}
+
+.snack {
+    width: 160px;
+    height: 160px;
+}
+
+
+@media only screen and (width > 560px) {
+    .doughnut-container {
+
+        width: 210px;
+        height: 210px;
+        /* border: 1px solid red; */
+    }
+}
