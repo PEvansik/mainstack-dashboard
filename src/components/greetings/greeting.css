@@ -42,7 +42,7 @@ color: #131316;
 }
 
 
-@media only screen and (width > 760px) {
+@media only screen and (width > 560px) {
     .greeting {
         flex-direction: row;
         align-items: center;
