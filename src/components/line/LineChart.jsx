@@ -33,14 +33,11 @@ function LineChart ({chartLabel, chartData, loader}) {
 
 
 
-// chartLabel should be put in place of label's value
-// chartData should be used in place of data's values
 
-    // console.log(chartLabel)
-    // console.log(chartData)
+
+
     const totalViews = chartData.reduce((a, c) => a + c, 0)
-    // 1, 3, 3, 7, 8, 5, 20, 50, 100, 2
-    // , , , , , , , , , 
+
 
     const day1 = [
         {x: Date.parse('2022-07-31 00:00:00 GMT+0100'), y: 1},
@@ -71,6 +68,35 @@ function LineChart ({chartLabel, chartData, loader}) {
         {x: Date.parse('2022-08-13 00:00:00 GMT+0100'), y: 2},
     ]
 
+
+    // const day1 = [
+    //     {x: Date.parse('2022-07-30 00:00:00 GMT+0100'), y: 1},
+    //     {x: Date.parse('2022-08-13 00:00:00 GMT+0100'), y: 198},
+    // ]
+    // const day3 = [
+    //     {x: Date.parse('2022-07-30 00:00:00 GMT+0100'), y: 1},
+    //     {x: Date.parse('2022-08-06 00:00:00 GMT+0100'), y: 26},
+    //     {x: Date.parse('2022-08-13 00:00:00 GMT+0100'), y: 172},
+    // ]
+    // const week = [
+    //     {x: Date.parse('2022-07-31 00:00:00 GMT+0100'), y: 1},
+    //     {x: Date.parse('2022-08-01 00:00:00 GMT+0100'), y: 13},
+    //     {x: Date.parse('2022-08-02 00:00:00 GMT+0100'), y: 33},
+    //     {x: Date.parse('2022-08-03 00:00:00 GMT+0100'), y: 152},
+    // ]
+    // const month = [
+    //     {x: Date.parse('2022-07-31 00:00:00 GMT+0100'), y: 1},
+    //     {x: Date.parse('2022-08-01 00:00:00 GMT+0100'), y: 3},
+    //     {x: Date.parse('2022-08-02 00:00:00 GMT+0100'), y: 3},
+    //     {x: Date.parse('2022-08-03 00:00:00 GMT+0100'), y: 7},
+    //     {x: Date.parse('2022-08-04 00:00:00 GMT+0100'), y: 8},
+    //     {x: Date.parse('2022-08-05 00:00:00 GMT+0100'), y: 5},
+    //     {x: Date.parse('2022-08-06 00:00:00 GMT+0100'), y: 20},
+    //     {x: Date.parse('2022-08-07 00:00:00 GMT+0100'), y: 50},
+    //     {x: Date.parse('2022-08-08 00:00:00 GMT+0100'), y: 100},
+    //     {x: Date.parse('2022-08-09 00:00:00 GMT+0100'), y: 2},
+    // ]
+
     // const
     const filterItem = [day1, day3, week, month]
 
@@ -79,14 +105,11 @@ function LineChart ({chartLabel, chartData, loader}) {
         console.log(e.target.innerText)
         console.log(e)
         console.log(filterItem.filter((item, index) => (index === +e.currentTarget.id))) 
-        // setFiltered(prev => prev = filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
         setFiltered(filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
         setDisplay(e.target.innerText)
     }
     console.log(filtered)
 
-    // console.log(chartData)
-    // console.log(chartLabel)
     console.log(display.length)
 
     const data = {
