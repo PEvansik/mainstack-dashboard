@@ -31,13 +31,7 @@ function LineChart ({chartLabel, chartData, loader}) {
     const[filtered, setFiltered] = useState([])
     const[display, setDisplay] = useState('')
 
-
-
-
-
-
-    const totalViews = chartData.reduce((a, c) => a + c, 0)
-
+    const totalViews = chartData.reduce((a, c) => a + c, 0);
 
     const day1 = [
         {x: Date.parse('2022-07-31 00:00:00 GMT+0100'), y: 1},
@@ -101,16 +95,16 @@ function LineChart ({chartLabel, chartData, loader}) {
     const filterItem = [day1, day3, week, month]
 
     const getViews = (e) => {
-        console.log(e.currentTarget.id)
-        console.log(e.target.innerText)
-        console.log(e)
-        console.log(filterItem.filter((item, index) => (index === +e.currentTarget.id))) 
+        // console.log(e.currentTarget.id)
+        // console.log(e.target.innerText)
+        // console.log(e)
+        // console.log(filterItem.filter((item, index) => (index === +e.currentTarget.id))) 
         setFiltered(filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
         setDisplay(e.target.innerText)
     }
-    console.log(filtered)
+    // console.log(filtered)
 
-    console.log(display.length)
+    // console.log(display.length)
 
     const data = {
         // labels: chartLabel,
@@ -180,7 +174,7 @@ function LineChart ({chartLabel, chartData, loader}) {
 
 
     return (
-        <div className="button-views">
+        <div className="button-and-views">
 
             <div className="line-btn">
                 <Button 
