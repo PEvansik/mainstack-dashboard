@@ -29,6 +29,7 @@ ChartJS.register(
 
 function LineChart ({chartLabel, chartData, loader}) {
     const[filtered, setFiltered] = useState([])
+    const[display, setDisplay] = useState('')
 
 
 
@@ -75,14 +76,18 @@ function LineChart ({chartLabel, chartData, loader}) {
 
     const getViews = (e) => {
         console.log(e.currentTarget.id)
-        console.log(filterItem.filter((item, index) => (index === +e.currentTarget.id))) 
-        // setFiltered(prev => prev = filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
-        setFiltered(filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
+        console.log(e.target.innerText)
+        console.log(e)
+        console.log(filterItem.filter((item, index) => (index === +e.target.id))) 
+        // setFiltered(prev => prev = filterItem.filter((item, index) => (index === +e.target.id)))   
+        setFiltered(filterItem.filter((item, index) => (index === +e.target.id)))   
+        setDisplay(e.target.innerText)
     }
     console.log(filtered.length)
 
     console.log(chartData)
     console.log(chartLabel)
+    console.log(display.length)
 
     const data = {
         // labels: chartLabel,
@@ -186,12 +191,6 @@ function LineChart ({chartLabel, chartData, loader}) {
                     filterViews={getViews}
                 />
 
-                {/* <button id={1} className="days-btn">1 Day</button>
-                <button id={3} className="days-btn">3 Days</button>
-                <button id={7} className="days-btn">7 Days</button>
-                <button id={30} className="days-btn">30 Days</button>
-                <button id={100} className="days-btn">All Tiime</button>  
-                <button id={1000} className='days-btn custom-date'>Custom Date</button> */}
             </div>
 
 
@@ -201,7 +200,7 @@ function LineChart ({chartLabel, chartData, loader}) {
                     <div className='page-views-img'><img src={info} alt="info-icon" /></div>
                 </div>
                 <div className="all-time">
-                    <p className='all-time-p'>All time</p>
+                    <p className='all-time-p'>{display.length < 1 ? `All time` : display}</p>
                 </div>
 
                 <h2 className="views-total">{totalViews}</h2>
@@ -223,8 +222,8 @@ export default LineChart;
 
 export const Button = ({id, qty, filterViews}) => {
     return(
-        <div className="filter" id={id} onClick={(e) => filterViews(e)}>
-            <button className='filter-btn'>{qty}</button>
+        <div className="filter" id={id}>
+            <button className='filter-btn' onClick={(e) => filterViews(e)}>{qty}</button>
         </div>
     )
 }
