@@ -78,15 +78,15 @@ function LineChart ({chartLabel, chartData, loader}) {
         console.log(e.currentTarget.id)
         console.log(e.target.innerText)
         console.log(e)
-        console.log(filterItem.filter((item, index) => (index === +e.target.id))) 
-        // setFiltered(prev => prev = filterItem.filter((item, index) => (index === +e.target.id)))   
-        setFiltered(filterItem.filter((item, index) => (index === +e.target.id)))   
+        console.log(filterItem.filter((item, index) => (index === +e.currentTarget.id))) 
+        // setFiltered(prev => prev = filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
+        setFiltered(filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
         setDisplay(e.target.innerText)
     }
-    console.log(filtered.length)
+    console.log(filtered)
 
-    console.log(chartData)
-    console.log(chartLabel)
+    // console.log(chartData)
+    // console.log(chartLabel)
     console.log(display.length)
 
     const data = {
@@ -222,8 +222,8 @@ export default LineChart;
 
 export const Button = ({id, qty, filterViews}) => {
     return(
-        <div className="filter" id={id}>
-            <button className='filter-btn' onClick={(e) => filterViews(e)}>{qty}</button>
+        <div className="filter" id={id} onClick={(e) => filterViews(e)}>
+            <button className='filter-btn' >{qty}</button>
         </div>
     )
 }
