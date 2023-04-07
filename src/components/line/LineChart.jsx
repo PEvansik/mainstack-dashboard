@@ -9,10 +9,13 @@ import {
     TimeScale, 
     Filler 
 } from 'chart.js';
+import { useState } from 'react';
 
 import 'chartjs-adapter-date-fns';
 import './linechart.css'
+import '../linebuttons/linebutton.css'
 import info from '../asset/geomedia/info.svg'
+import {Linebtns} from '../linebuttons/Linebutton'
 
 ChartJS.register(
     LineElement, 
@@ -25,6 +28,7 @@ ChartJS.register(
 
 
 function LineChart ({chartLabel, chartData, loader}) {
+    const[filtered, setFiltered] = useState([])
 
 
 
@@ -34,12 +38,57 @@ function LineChart ({chartLabel, chartData, loader}) {
     // console.log(chartLabel)
     // console.log(chartData)
     const totalViews = chartData.reduce((a, c) => a + c, 0)
+    // 1, 3, 3, 7, 8, 5, 20, 50, 100, 2
+    // , , , , , , , , , 
+
+    const day1 = [
+        {x: Date.parse('2022-07-31 00:00:00 GMT+0100'), y: 1},
+        {x: Date.parse('2022-08-01 00:00:00 GMT+0100'), y: 3},
+        {x: Date.parse('2022-08-02 00:00:00 GMT+0100'), y: 3},
+        {x: Date.parse('2022-08-03 00:00:00 GMT+0100'), y: 7},
+        {x: Date.parse('2022-08-04 00:00:00 GMT+0100'), y: 8},
+        {x: Date.parse('2022-08-05 00:00:00 GMT+0100'), y: 5},
+        {x: Date.parse('2022-08-06 00:00:00 GMT+0100'), y: 20},
+        {x: Date.parse('2022-08-07 00:00:00 GMT+0100'), y: 50},
+        {x: Date.parse('2022-08-08 00:00:00 GMT+0100'), y: 100},
+        {x: Date.parse('2022-08-09 00:00:00 GMT+0100'), y: 2},
+    ]
+    const day3 = [
+        {x: Date.parse('2022-07-31 00:00:00 GMT+0100'), y: 1},
+        {x: Date.parse('2022-08-01 00:00:00 GMT+0100'), y: 13},
+        {x: Date.parse('2022-08-02 00:00:00 GMT+0100'), y: 33},
+        {x: Date.parse('2022-08-03 00:00:00 GMT+0100'), y: 152},
+    ]
+    const week = [
+        {x: Date.parse('2022-07-30 00:00:00 GMT+0100'), y: 1},
+        {x: Date.parse('2022-08-06 00:00:00 GMT+0100'), y: 26},
+        {x: Date.parse('2022-08-13 00:00:00 GMT+0100'), y: 172},
+    ]
+    const month = [
+        {x: Date.parse('2022-07-30 00:00:00 GMT+0100'), y: 1},
+        {x: Date.parse('2022-08-06 00:00:00 GMT+0100'), y: 196},
+        {x: Date.parse('2022-08-13 00:00:00 GMT+0100'), y: 2},
+    ]
+
+    // const
+    const filterItem = [day1, day3, week, month]
+
+    const getViews = (e) => {
+        console.log(e.currentTarget.id)
+        console.log(filterItem.filter((item, index) => (index === +e.currentTarget.id))) 
+        // setFiltered(prev => prev = filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
+        setFiltered(filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
+    }
+    console.log(filtered.length)
+
+    console.log(chartData)
+    console.log(chartLabel)
 
     const data = {
-        labels: chartLabel,
+        // labels: chartLabel,
         datasets: [{
             label: 'Views',
-            data: chartData,
+            data: filtered.length < 1 ? day1 : filtered[0] ,
             backgroundColor: 'transparent',
             borderColor: '#FF5403',
             fill: {
@@ -63,7 +112,7 @@ function LineChart ({chartLabel, chartData, loader}) {
         scales: {
             y: {
                 min: 0,
-                max: 105,
+                max: filtered.length < 1 ? 105 : 199,
                 ticks: {
                     stepSize: 5,
                     callback: (value) => value
@@ -100,26 +149,82 @@ function LineChart ({chartLabel, chartData, loader}) {
     //     width: '100%',
     //     height: '100%'}}
 
+
+
     return (
-        <div className="views">
-            <div className="page-views-holder">
-                <h2 className='page-views'>Page Views</h2>
-                <div className='page-views-img'><img src={info} alt="info-icon" /></div>
-            </div>
-            <div className="all-time">
-                <p className='all-time-p'>All time</p>
+        <div className="button-views">
+
+            <div className="line-btn">
+                <Button 
+                    id={0}
+                    qty='1 Day'
+                    filterViews={getViews}
+                />
+                <Button 
+                    id={1}
+                    qty='3 Days'
+                    filterViews={getViews}
+                />
+                <Button 
+                    id={2}
+                    qty='7 Days'
+                    filterViews={getViews}
+                />
+                <Button 
+                    id={3}
+                    qty='30 Days'
+                    filterViews={getViews}
+                />
+                <Button 
+                    id={0}
+                    qty='All Time'
+                    filterViews={getViews}
+                />
+                <Button 
+                    id={0}
+                    qty='Custom Date'
+                    filterViews={getViews}
+                />
+
+                {/* <button id={1} className="days-btn">1 Day</button>
+                <button id={3} className="days-btn">3 Days</button>
+                <button id={7} className="days-btn">7 Days</button>
+                <button id={30} className="days-btn">30 Days</button>
+                <button id={100} className="days-btn">All Tiime</button>  
+                <button id={1000} className='days-btn custom-date'>Custom Date</button> */}
             </div>
 
-            <h2 className="views-total">{totalViews}</h2>
-            <div className="chart-box">
-                <div className="linechart" >
-                    {loader ? <p className='loading'>Loading...</p> : <Line data={data} options={options} className='line'></Line>}
+
+            <div className="views">
+                <div className="page-views-holder">
+                    <h2 className='page-views'>Page Views</h2>
+                    <div className='page-views-img'><img src={info} alt="info-icon" /></div>
                 </div>
-            </div>
+                <div className="all-time">
+                    <p className='all-time-p'>All time</p>
+                </div>
 
+                <h2 className="views-total">{totalViews}</h2>
+                <div className="chart-box">
+                    <div className="linechart" >
+                        {loader ? <p className='loading'>Loading...</p> : <Line data={data} options={options} className='line'></Line>}
+                    </div>
+                </div>
+
+            </div>
         </div>
     )
 }
 
 
 export default LineChart;
+
+
+
+export const Button = ({id, qty, filterViews}) => {
+    return(
+        <div className="filter" id={id} onClick={(e) => filterViews(e)}>
+            <button className='filter-btn'>{qty}</button>
+        </div>
+    )
+}

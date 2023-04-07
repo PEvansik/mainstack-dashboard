@@ -120,7 +120,7 @@ export const Statholder = () => {
     return (
         <div className="statholder">
             <Greetings />
-            <Linebtns />
+            {/* <Linebtns /> */}
             < LineChart 
                 chartLabel={viewDate}
                 chartData={views}

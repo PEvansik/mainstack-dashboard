@@ -2,6 +2,10 @@
 
 .views {
     padding-block: 32px;
+    padding-inline: 24px;
+    border: 1px solid #EFF1F6;
+    border-radius: 12px;
+
 }
 
 .page-views-holder {
