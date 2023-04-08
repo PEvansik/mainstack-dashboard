@@ -115,7 +115,7 @@ function LineChart ({chartLabel, chartData, loader}) {
             borderColor: '#FF5403',
             fill: {
                 target: 'origin',
-                above: '#FF540347',   // Area will be red above the origin
+                above: '#FF540337',   // Area will be red above the origin
                 below: '#ffffff47'    // And blue below the origin
               },
             pointBorderColor: 'grey',
@@ -135,15 +135,17 @@ function LineChart ({chartLabel, chartData, loader}) {
             y: {
                 min: 0,
                 max: filtered.length < 1 ? 105 : 199,
-                ticks: {
-                    stepSize: 5,
-                    callback: (value) => value
+                // ticks: {
+                //     stepSize: 20,
+                //     callback: (value) => value
+                // },
+                border: {
+                    display: false,
+                    dash: [6, 10]
                 },
                 grid: {
-                    // borderDash: [10, 4],
-                    borderDash: [6],
-                    // color: "#348632"
-                 }
+                    drawTicks: false,
+                  }
                 // gridLines: {
                 //     borderDash: [8, 4],
                 //     color: "#348632"
@@ -155,11 +157,11 @@ function LineChart ({chartLabel, chartData, loader}) {
                     unit: 'day',
                     parser: 'yyyy-MM-dd'
                 },
+                border: {
+                    display: false,
+                },
                 grid: {
                     display: false ,
-                    drawBorder: false,
-                    border: false,
-
                 }
             },
             
