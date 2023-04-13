@@ -8,12 +8,11 @@ import {MdClose} from 'react-icons/md'
 
 export const Header = ({toggleMenu, ham}) => {
 
-    // console.log(menu)
     const close = {color: "red", fontSize: "24px"}
 
     return(
         <div className="header">
-            {/* Remove this logo when removing the hamburger button */}
+
             <div className="logo"> 
                 <img src={mainstack} alt="mainstack-logo" />
             </div>
@@ -22,7 +21,6 @@ export const Header = ({toggleMenu, ham}) => {
                 <h3>Dashboard</h3>
             </div>
 
-            {/* add menu button for mobil on this side */}
             <div className="hamburger" onClick={toggleMenu}>
                 {!ham 
                     ? <RxHamburgerMenu className='open-menu' size='24px'/> 

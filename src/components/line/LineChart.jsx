@@ -63,48 +63,13 @@ function LineChart ({chartLabel, chartData, loader}) {
     ]
 
 
-    // const day1 = [
-    //     {x: Date.parse('2022-07-30 00:00:00 GMT+0100'), y: 1},
-    //     {x: Date.parse('2022-08-13 00:00:00 GMT+0100'), y: 198},
-    // ]
-    // const day3 = [
-    //     {x: Date.parse('2022-07-30 00:00:00 GMT+0100'), y: 1},
-    //     {x: Date.parse('2022-08-06 00:00:00 GMT+0100'), y: 26},
-    //     {x: Date.parse('2022-08-13 00:00:00 GMT+0100'), y: 172},
-    // ]
-    // const week = [
-    //     {x: Date.parse('2022-07-31 00:00:00 GMT+0100'), y: 1},
-    //     {x: Date.parse('2022-08-01 00:00:00 GMT+0100'), y: 13},
-    //     {x: Date.parse('2022-08-02 00:00:00 GMT+0100'), y: 33},
-    //     {x: Date.parse('2022-08-03 00:00:00 GMT+0100'), y: 152},
-    // ]
-    // const month = [
-    //     {x: Date.parse('2022-07-31 00:00:00 GMT+0100'), y: 1},
-    //     {x: Date.parse('2022-08-01 00:00:00 GMT+0100'), y: 3},
-    //     {x: Date.parse('2022-08-02 00:00:00 GMT+0100'), y: 3},
-    //     {x: Date.parse('2022-08-03 00:00:00 GMT+0100'), y: 7},
-    //     {x: Date.parse('2022-08-04 00:00:00 GMT+0100'), y: 8},
-    //     {x: Date.parse('2022-08-05 00:00:00 GMT+0100'), y: 5},
-    //     {x: Date.parse('2022-08-06 00:00:00 GMT+0100'), y: 20},
-    //     {x: Date.parse('2022-08-07 00:00:00 GMT+0100'), y: 50},
-    //     {x: Date.parse('2022-08-08 00:00:00 GMT+0100'), y: 100},
-    //     {x: Date.parse('2022-08-09 00:00:00 GMT+0100'), y: 2},
-    // ]
 
-    // const
     const filterItem = [day1, day3, week, month]
 
     const getViews = (e) => {
-        // console.log(e.currentTarget.id)
-        // console.log(e.target.innerText)
-        // console.log(e)
-        // console.log(filterItem.filter((item, index) => (index === +e.currentTarget.id))) 
         setFiltered(filterItem.filter((item, index) => (index === +e.currentTarget.id)))   
         setDisplay(e.target.innerText)
     }
-    // console.log(filtered)
-
-    // console.log(display.length)
 
     const data = {
         // labels: chartLabel,
@@ -114,9 +79,11 @@ function LineChart ({chartLabel, chartData, loader}) {
             backgroundColor: 'transparent',
             borderColor: '#FF5403',
             fill: {
-                target: 'origin',
-                above: '#FF540337',   // Area will be red above the origin
-                below: '#ffffff47'    // And blue below the origin
+                target: {
+                    value: 0.5
+                },
+                above: 'rgba(255, 84, 3, 0.12)',
+                below: '#FFFFFFFF'
               },
             pointBorderColor: 'grey',
             pointBorderWidth: 0.1,
@@ -135,21 +102,13 @@ function LineChart ({chartLabel, chartData, loader}) {
             y: {
                 min: 0,
                 max: filtered.length < 1 ? 105 : 199,
-                // ticks: {
-                //     stepSize: 20,
-                //     callback: (value) => value
-                // },
                 border: {
                     display: false,
-                    dash: [6, 10]
+                    dash: [16, 10]
                 },
                 grid: {
                     drawTicks: false,
                   }
-                // gridLines: {
-                //     borderDash: [8, 4],
-                //     color: "#348632"
-                // }
             },
             x: {
                 type: 'time',
@@ -169,9 +128,6 @@ function LineChart ({chartLabel, chartData, loader}) {
         maintainAspectRatio: false,
     }
 
-    // style={{    
-    //     width: '100%',
-    //     height: '100%'}}
 
 
 

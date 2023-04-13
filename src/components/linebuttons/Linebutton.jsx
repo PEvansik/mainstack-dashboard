@@ -41,15 +41,6 @@ export const Linebtns = ({custom, getViews}) => {
     const clime = [[1, 4], [3, 6], [4, 9], [5, 0]]
     const tina = [ 3, 8, 9, 3]
 
-    // function finder(x, arr) {
-    //     console.log(arr.filter((item, index) => (index === +x.target.id)))
-    // }
-
-
-
-    // const getViews = (e) => {
-    //     filterItem.filter((item, index) => (index === +e.currentTarget.id))
-    // }
     
 
     return(
@@ -85,12 +76,7 @@ export const Linebtns = ({custom, getViews}) => {
                 filterViews={getViews}
             />
             <button id={0}></button>
-            {/* <button id={1} className="days-btn">1 Day</button>
-            <button id={3} className="days-btn">3 Days</button>
-            <button id={7} className="days-btn">7 Days</button>
-            <button id={30} className="days-btn">30 Days</button>
-            <button id={100} className="days-btn">All Tiime</button>  
-            <button id={1000} className='days-btn custom-date'>Custom Date</button> */}
+
         </div>
     )
 }

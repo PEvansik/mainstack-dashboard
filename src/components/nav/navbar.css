@@ -5,8 +5,6 @@
     height: 900px;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid red; */
-    /* gap: 40px; */
     background-color: #fff;
     z-index: 2;
 }
@@ -17,7 +15,6 @@
     width: 40px;
     height: 40px;
     margin-left: 54px;
-    /* border: 1px solid red; */
     margin-top: 32px;
     margin-bottom: 40px;
     cursor: pointer;
@@ -33,14 +30,10 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    /* padding-top: 60px; */
     padding-left: 60px;
-    /* border: 1px solid red; */
     gap: 156px;
 }
 
-
-/* nav-items */
 .nav-items {
     display: flex;
     flex-direction: column;
@@ -54,13 +47,10 @@
     display: flex;
     gap: 12px;
     justify-content: flex-start;
-    /* border: 1px solid red; */
 }
 .nav-items-head-image {
     width: 20px;
     height: 20px;
-    /* background: #FF5403; */
-    /* color: #FF5403;   */
 }
 .nav-item-text {
     font-size: 16px;
@@ -69,14 +59,12 @@
 }
 
 
-/* nav-list-item */
 .nav-list-item{
     cursor: pointer;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    /* border: 1px solid red; */
 }
 .nav-list-item-holder {
     display: flex;
@@ -99,7 +87,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* border: 1px solid red; */
 }
 .navlistitem-container {
     display: flex;
@@ -109,7 +96,6 @@
 
 /* PROFILE */
 .profile {
-    /* border: 1px solid red; */
     width: 228px;
 }
 .profile-holder {
@@ -140,10 +126,6 @@
 }
 
 
-
-@media only screen and (width > 760px) {
-
-}
 
 @media only screen and (width > 1303px) {
     .navbar  {

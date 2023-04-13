@@ -49,16 +49,7 @@
     border-radius: 50%;
 }
 
-/* .doughnut-holder {
-    width: 400px;
-    height: 400px;
-} */
 
-
-
-.namedstatholder {
-
-}
 .statholder-container {
     display: flex;
     flex-direction: column;

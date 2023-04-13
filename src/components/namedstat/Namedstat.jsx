@@ -24,7 +24,6 @@ export const Namedstat = ({countrymedia, stat, icon, altText, bgcol}) => {
                 <p className='conmed-stat'>{stat}%</p>
                 <span className="statcolor" style={
                     {
-                        // color: {bgcol},
                         backgroundColor: `${bgcol}`
                     }
                 }></span>
@@ -36,17 +35,12 @@ export const Namedstat = ({countrymedia, stat, icon, altText, bgcol}) => {
 
 export const Geostatholder = ({geolo, geoStats}) => {
 
-    // doughLabel is the array of country labels
-    // doughData is the array of percentage labels
-
-    // console.log(geolo)
 
     ['rgb((89,158,234)', 'rgb(132,79,246)', 'rgb(15,183,122)', 'rgb(250,183,10)', 'rgb(240, 148, 104)']
 
     return (
         <div className="namedstatholder">
             <div className="statholder-container">
-                {/* use an array to create this */}
                 {geolo.map((geo, i) => {
                     return (<Namedstat 
                     key={geo.country}
@@ -85,8 +79,7 @@ export const Geostatholder = ({geolo, geoStats}) => {
     )
 }
 export const Sourcestatholder = ({mediaSource, mediaStats}) => {
-    // doughLabel is the array of country labels
-    // doughData is the array of percentage labels
+
 
 
 
